@@ -15,6 +15,35 @@ namespace DesafioFocare1
         public Form1()
         {
             InitializeComponent();
+
         }
+
+        private void ckbMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            ListaCliente lstClientes = new ListaCliente();
+
+            List<string> lstM = lstClientes.Sexo();
+            List<int> lstIdadeMasculina = lstClientes.Idade();
+
+            ListViewItem lstItem;
+
+            lstListaCliente.Columns.Add("Idade");
+            lstListaCliente.Columns.Add("Sexo");
+
+            int intRow = 0;
+            //Adicionando itens ao ListView
+            foreach (var index in lstIdadeMasculina)
+            {
+                //lstListaCliente.Columns[1].Text = index.ToString();
+
+                //lstListaCliente.Items.Add(index.ToString());
+                //lstListaCliente.Items.Add(lstM[0].ToString());
+               
+                lstItem = new ListViewItem(index.ToString());
+                lstListaCliente.Items.Add(lstItem);
+            }
+
+        }
+
     }
 }

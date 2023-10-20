@@ -9,13 +9,25 @@ namespace DesafioFocare1
 
    public class ListaCliente
     {
+        List<int> intIdade = new List<int>();
+        List<string> strSexo = new List<string>();
+        int i = 0;
+
         public List<int> Idade()
         {
-            return List<>;
+            for(i=1;i<80;i++)
+            {
+                intIdade.Add(i);
+            }
+
+            return intIdade.ToList();
         }
         public List<string> Sexo()
         {
+            strSexo.Add("M");
+            strSexo.Add("F");
 
+            return strSexo.ToList();
         }
     }
 }
