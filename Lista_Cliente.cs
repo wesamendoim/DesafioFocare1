@@ -15,7 +15,7 @@ namespace DesafioFocare1
 
         public List<int> Idade()
         {
-            for(i=1;i<80;i++)
+            for(i=1;i<20;i++)
             {
                 intIdade.Add(i);
             }

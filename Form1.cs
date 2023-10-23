@@ -20,27 +20,52 @@ namespace DesafioFocare1
 
         private void ckbMasculino_CheckedChanged(object sender, EventArgs e)
         {
-            ListaCliente lstClientes = new ListaCliente();
-
-            List<string> lstM = lstClientes.Sexo();
-            List<int> lstIdadeMasculina = lstClientes.Idade();
-
-            ListViewItem lstItem;
-
-            lstListaCliente.Columns.Add("Idade");
-            lstListaCliente.Columns.Add("Sexo");
-
-            int intRow = 0;
-            //Adicionando itens ao ListView
-            foreach (var index in lstIdadeMasculina)
+            if (ckbMasculino.Checked == true)
             {
-                //lstListaCliente.Columns[1].Text = index.ToString();
+                ListaCliente lstClientes = new ListaCliente();
 
-                //lstListaCliente.Items.Add(index.ToString());
-                //lstListaCliente.Items.Add(lstM[0].ToString());
-               
-                lstItem = new ListViewItem(index.ToString());
-                lstListaCliente.Items.Add(lstItem);
+                List<string> lstM = lstClientes.Sexo();
+                List<int> lstIdadeMasculina = lstClientes.Idade();
+
+                ListViewItem lstItem;
+
+                lstListaClientes.Columns.Add("Idade", 80, HorizontalAlignment.Left);
+                lstListaClientes.Columns.Add("Sexo", 80, HorizontalAlignment.Left);
+                
+                //lstListaClientes.HeaderStyle = ColumnHeaderStyle.Nonclickable;
+
+                int intRow = 1;
+                //Adicionando itens ao ListView
+                foreach (var index in lstIdadeMasculina)
+                {
+                    //lstListaClientes.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                    //lstListaClientes.Items.Add(new ListViewItem(new String[] {index.ToString(), lstM[0].ToString()}));
+                    //lstListaClientes.Items.Add(lstM[0].ToString(),0)
+                    //lstListaClientes.Columns[1].Text = index.ToString();
+                    //lstListaClientes.Columns[0].Text = lstM[0].ToString();
+
+                    //lstListaCliente.Columns[0].Text = lstM[0].ToString();
+                    //lstListaCliente.Items[intRow].SubItems.Add(index.ToString());
+                    //intRow++;
+                    //lstItem.SubItems[clmSexo].Text = index.ToString();
+                    //lstListaCliente.Columns[1].Text = index.ToString();
+
+                    //lstItem = new ListViewItem(index.ToString());
+                    //lstItem.SubItems.Add(lstM[0].ToString());
+
+                    //lstListaClientes.Items.Add(lstItem);
+                    //lstListaClientes.View = View.Details;
+                    //lstListaClientes.Columns[1].Text = index.ToString();
+                    //lstListaClientes.Columns[0].Text = lstM[0].ToString();
+                    lstListaClientes.Items.Add(new ListViewItem(new String[] {index.ToString(), lstM[0].ToString() }));
+                    lstListaClientes.Update();
+                     
+                }
+
+            }
+            else
+            {
+                lstListaClientes.Clear();
             }
 
         }
