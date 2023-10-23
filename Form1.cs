@@ -29,37 +29,14 @@ namespace DesafioFocare1
 
                 ListViewItem lstItem;
 
-                lstListaClientes.Columns.Add("Idade", 80, HorizontalAlignment.Left);
-                lstListaClientes.Columns.Add("Sexo", 80, HorizontalAlignment.Left);
+                lstListaClientes.Columns.Add("Idade", 120, HorizontalAlignment.Center);
+                lstListaClientes.Columns.Add("Sexo", 120, HorizontalAlignment.Center);
                 
-                //lstListaClientes.HeaderStyle = ColumnHeaderStyle.Nonclickable;
-
-                int intRow = 1;
                 //Adicionando itens ao ListView
                 foreach (var index in lstIdadeMasculina)
                 {
-                    //lstListaClientes.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
-                    //lstListaClientes.Items.Add(new ListViewItem(new String[] {index.ToString(), lstM[0].ToString()}));
-                    //lstListaClientes.Items.Add(lstM[0].ToString(),0)
-                    //lstListaClientes.Columns[1].Text = index.ToString();
-                    //lstListaClientes.Columns[0].Text = lstM[0].ToString();
-
-                    //lstListaCliente.Columns[0].Text = lstM[0].ToString();
-                    //lstListaCliente.Items[intRow].SubItems.Add(index.ToString());
-                    //intRow++;
-                    //lstItem.SubItems[clmSexo].Text = index.ToString();
-                    //lstListaCliente.Columns[1].Text = index.ToString();
-
-                    //lstItem = new ListViewItem(index.ToString());
-                    //lstItem.SubItems.Add(lstM[0].ToString());
-
-                    //lstListaClientes.Items.Add(lstItem);
-                    //lstListaClientes.View = View.Details;
-                    //lstListaClientes.Columns[1].Text = index.ToString();
-                    //lstListaClientes.Columns[0].Text = lstM[0].ToString();
-                    lstListaClientes.Items.Add(new ListViewItem(new String[] {index.ToString(), lstM[0].ToString() }));
+                    lstListaClientes.Items.Add(new ListViewItem(new String[] {index.ToString(), lstM[0].ToString()}));
                     lstListaClientes.Update();
-                     
                 }
 
             }
@@ -70,5 +47,32 @@ namespace DesafioFocare1
 
         }
 
+        private void ckbFeminino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbFeminino.Checked == true)
+            {
+                ListaCliente lstClientes = new ListaCliente();
+
+                List<string> lstM = lstClientes.Sexo();
+                List<int> lstIdadeMasculina = lstClientes.Idade();
+
+                ListViewItem lstItem;
+
+                lstListaClientes.Columns.Add("Idade", 120, HorizontalAlignment.Center);
+                lstListaClientes.Columns.Add("Sexo", 120, HorizontalAlignment.Center);
+
+                //Adicionando itens ao ListView
+                foreach (var index in lstIdadeMasculina)
+                {
+                    lstListaClientes.Items.Add(new ListViewItem(new String[] { index.ToString(), lstM[1].ToString() }));
+                    lstListaClientes.Update();
+                }
+
+            }
+            else
+            {
+                lstListaClientes.Clear();
+            }
+        }
     }
 }

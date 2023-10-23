@@ -54,6 +54,7 @@ namespace DesafioFocare1
             this.ckbFeminino.TabIndex = 2;
             this.ckbFeminino.Text = "F";
             this.ckbFeminino.UseVisualStyleBackColor = true;
+            this.ckbFeminino.CheckedChanged += new System.EventHandler(this.ckbFeminino_CheckedChanged);
             // 
             // lstListaClientes
             // 
