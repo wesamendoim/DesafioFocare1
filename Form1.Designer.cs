@@ -32,6 +32,7 @@ namespace DesafioFocare1
             this.ckbMasculino = new System.Windows.Forms.CheckBox();
             this.ckbFeminino = new System.Windows.Forms.CheckBox();
             this.lstListaClientes = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ckbMasculino
@@ -67,17 +68,27 @@ namespace DesafioFocare1
             this.lstListaClientes.UseCompatibleStateImageBehavior = false;
             this.lstListaClientes.View = System.Windows.Forms.View.Details;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(308, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Escolha o gênero desejado";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 671);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lstListaClientes);
             this.Controls.Add(this.ckbFeminino);
             this.Controls.Add(this.ckbMasculino);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Formulario Lista Clientes";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,6 +98,7 @@ namespace DesafioFocare1
         private System.Windows.Forms.CheckBox ckbMasculino;
         private System.Windows.Forms.CheckBox ckbFeminino;
         private System.Windows.Forms.ListView lstListaClientes;
+        private System.Windows.Forms.Label label1;
     }
 }
 
